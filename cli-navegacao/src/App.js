@@ -8,10 +8,13 @@ import {
 import { Home } from './pages/home/index';
 import { Login } from "./pages/login";
 import { Feed } from "./pages/feed";
- 
 
+import {GlobalStyle} from './styles/global';
+ 
 function App() {
   return (
+    <>
+    <GlobalStyle/>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,6 +22,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
       </Routes>
     </Router>
+    </>
   );
 }
 

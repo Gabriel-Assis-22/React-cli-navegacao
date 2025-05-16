@@ -1,9 +1,15 @@
 // import { Link } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { Conteiner, Title, TitleHighlight, TextContent } from './styles'
 import bannerImage from '../../assets/banner.png'
 import { Header } from '../../components/Header'
 const Home = () => {
+
+    const  navigate  = useNavigate();
+    const handleClickSigIn = () => {
+        navigate('/login')
+    }
     return (
         <>
             <Header />
@@ -19,7 +25,7 @@ const Home = () => {
                     </Title>
                     <TextContent>
                         Domine as tecnologias ultilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidades com os melhores experts.
-                        <Button variant='secondary' title="Começar agora" onClick={() => null} />
+                        <Button variant='secondary' title="Começar agora" onClick={handleClickSigIn} />
                     </TextContent>
 
                 </div>
