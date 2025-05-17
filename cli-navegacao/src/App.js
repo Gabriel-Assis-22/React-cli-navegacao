@@ -8,6 +8,7 @@ import {
 import { Home } from './pages/home/index';
 import { Login } from "./pages/login";
 import { Feed } from "./pages/feed";
+import { Test } from "./pages/test";
 
 import {GlobalStyle} from './styles/global';
  
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/feed" element={<Feed />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
     </>
