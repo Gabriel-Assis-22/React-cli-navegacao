@@ -1,18 +1,21 @@
-import { useNavigate  } from "react-router-dom";
+
 import { MdEmail, MdLock } from 'react-icons/md'
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
-import { api } from '../../services/api';
+import { useContext } from 'react';
+
 
 import { useForm } from "react-hook-form";
 
 
 import { Container, Title, Column, TitleLogin, SubtitleLogin, EsqueciText, CriarText, Row, Wrapper } from './styles';
+import { AuthContext } from '../../context/auth';
+
 
 const Login = () => {
 
-    const navigate = useNavigate()
+    const {handleLogin} = useContext(AuthContext)
 
     const { control, handleSubmit, formState: { errors  } } = useForm({
         reValidateMode: 'onChange',
@@ -20,18 +23,7 @@ const Login = () => {
     });
 
     const onSubmit = async (formData) => {
-        try{
-            const {data} = await api.get(`/users?email=${formData.email}&senha=${formData.senha}`);
-            
-            if(data.length && data[0].id){
-                navigate('/feed') 
-                return
-            }
-
-            alert('Usuário ou senha inválido')
-        }catch(e){
-            //TODO: HOUVE UM ERRO
-        }
+       handleLogin(formData);
     };
 
     console.log('errors', errors);

@@ -8,7 +8,8 @@ import { api } from '../../services/api';
 import { useForm } from "react-hook-form";
 
 
-import { Container, Title, Column, TitleLogin, SubtitleLogin, EsqueciText, CriarText, Row, Wrapper } from './styles';
+import { Container, Title, Column, TitleLogin, SubtitleLogin, CriarText, Row, Wrapper } from './styles';
+// , EsqueciText
 
 const Cadastro = () => {
 
